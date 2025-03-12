@@ -88,31 +88,6 @@
       font-weight: 600;
     }
 
-    .language-toggle {
-      text-align: center;
-      margin: 1.5rem 0;
-    }
-
-    .btn {
-      padding: 0.5rem 1rem;
-      margin: 0 0.5rem;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      background: #007bff;
-      color: #fff;
-      font-weight: 600;
-      transition: 0.3s;
-    }
-
-    .btn:hover {
-      background: #0056b3;
-    }
-
-    #en {
-      display: none;
-    }
-
     @media (max-width: 600px) {
       .container {
         padding: 1.5rem;
@@ -128,62 +103,60 @@
       <p>Analista de Sistemas | Analista de Suporte | Analista Field Service | Suporte de TI</p>
     </header>
 
-    <div class="language-toggle">
-      <button class="btn" id="btn-pt">Português</button>
-      <button class="btn" id="btn-en">English</button>
+    <div class="section-title">Informações Pessoais</div>
+    <div class="contact">
+      <p><span>Local:</span> Belvedere II, Montes Claros/MG</p>
+      <p><span>Telefones:</span> (38) 9 9816-5829 | (38) 3224-6808</p>
+      <p><span>Email:</span> <a href="mailto:alissonhenr90@hotmail.com">alissonhenr90@hotmail.com</a></p>
+      <p><span>LinkedIn:</span> <a href="https://linkedin.com/in/alissonheriquesza" target="_blank">linkedin.com/in/alissonheriquesza</a></p>
     </div>
 
-    <article id="pt">
-      <div class="section-title">Informações Pessoais</div>
-      <div class="contact">
-        <p><span>Local:</span> Belvedere II, Montes Claros/MG</p>
-        <p><span>Telefones:</span> (38) 9 9816-5829 | (38) 3224-6808</p>
-        <p><span>Email:</span> <a href="mailto:alissonhenr90@hotmail.com">alissonhenr90@hotmail.com</a></p>
-        <p><span>LinkedIn:</span> <a href="https://linkedin.com/in/alissonheriquesza" target="_blank">linkedin.com/in/alissonheriquesza</a></p>
-      </div>
+    <div class="section-title">Objetivo</div>
+    <p>Atuar como Analista de Suporte, Analista de Sistemas, Analista Field Service ou Suporte de TI.</p>
 
-      <div class="section-title">Objetivo</div>
-      <p>Atuar como Analista de Suporte, Analista de Sistemas, Analista Field Service ou Suporte de TI.</p>
+    <div class="section-title">Resumo Profissional</div>
+    <p>Profissional com 8 anos de experiência em suporte técnico e análise de sistemas...</p>
+    <ul>
+      <li>Vivência sólida em ambientes Windows...</li>
+      <li>Experiência com ferramentas de ITSM...</li>
+    </ul>
 
-      <div class="section-title">Resumo Profissional</div>
-      <p>Profissional com 8 anos de experiência em suporte técnico e análise de sistemas...</p>
-      <ul>
-        <li>Vivência sólida em ambientes Windows...</li>
-        <li>Experiência com ferramentas de ITSM...</li>
-      </ul>
-    </article>
+    <div class="section-title">Formação Acadêmica</div>
+    <ul>
+      <li><strong>Bacharel em Sistemas de Informação</strong> – FACOMP, 2013.</li>
+      <li><strong>Técnico em Administração</strong> – SENAI Montes Claros, 2023-2025.</li>
+    </ul>
 
-    <article id="en">
-      <div class="section-title">Personal Information</div>
-      <div class="contact">
-        <p><span>Location:</span> Belvedere II, Montes Claros/MG - Brazil</p>
-        <p><span>Phone:</span> +55 (38) 9 9816-5829 | +55 (38) 3224-6808</p>
-        <p><span>Email:</span> <a href="mailto:alissonhenr90@hotmail.com">alissonhenr90@hotmail.com</a></p>
-        <p><span>LinkedIn:</span> <a href="https://linkedin.com/in/alissonheriquesza" target="_blank">linkedin.com/in/alissonheriquesza</a></p>
-      </div>
+    <div class="section-title">Experiência Profissional</div>
+    <h3>Trade Serviços (Mar/2022 - Atual)</h3>
+    <p><em>Analista de Suporte em TI</em></p>
+    <ul>
+      <li>Atendimento e resolução de chamados (ServiceNow).</li>
+      <li>Gestão de ativos de TI e controle de inventário.</li>
+    </ul>
 
-      <div class="section-title">Objective</div>
-      <p>Seeking to work as an IT Support Analyst, Systems Analyst, Field Service Analyst, or IT Support professional.</p>
+    <h3>Sicoob Credinor (Jan/2022 - Mar/2022)</h3>
+    <p><em>Analista de Suporte</em></p>
+    <ul>
+      <li>Suporte de primeiro e segundo nível a usuários internos.</li>
+    </ul>
 
-      <div class="section-title">Professional Summary</div>
-      <p>IT professional with 8 years of experience in technical support and systems analysis...</p>
-      <ul>
-        <li>Solid background in Windows environments...</li>
-        <li>Experience with ITSM tools...</li>
-      </ul>
-    </article>
+    <div class="section-title">Idiomas</div>
+    <ul>
+      <li><strong>Inglês</strong> – Nível Intermediário (cursando).</li>
+    </ul>
+
+    <div class="section-title">Certificações</div>
+    <ul>
+      <li>CPA-10 – Emitida em abril de 2023.</li>
+      <li>ITIL, COBIT, PMBOK – Udemy.</li>
+    </ul>
+
+    <div class="section-title">Competências</div>
+    <ul>
+      <li>Windows, Linux básico, ITSM, Active Directory.</li>
+      <li>Redes, cabeamento estruturado, protocolos de rede.</li>
+    </ul>
   </div>
-
-  <script>
-    document.getElementById('btn-pt').addEventListener('click', () => {
-      document.getElementById('pt').style.display = 'block';
-      document.getElementById('en').style.display = 'none';
-    });
-    
-    document.getElementById('btn-en').addEventListener('click', () => {
-      document.getElementById('pt').style.display = 'none';
-      document.getElementById('en').style.display = 'block';
-    });
-  </script>
 </body>
 </html>
