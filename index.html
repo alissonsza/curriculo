@@ -13,30 +13,43 @@
             text-align: center;
         }
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: auto;
             background: white;
-            padding: 20px;
+            padding: 30px;
             border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+            text-align: left;
         }
         h1, h2 {
             color: #333;
+            text-align: center;
         }
         .language-toggle {
+            text-align: center;
             margin: 20px 0;
         }
         .language-toggle button {
-            padding: 10px;
+            padding: 12px 20px;
             font-size: 16px;
             cursor: pointer;
             margin: 5px;
+            border: none;
+            background-color: #007BFF;
+            color: white;
+            border-radius: 5px;
+        }
+        .language-toggle button:hover {
+            background-color: #0056b3;
         }
         .content {
             display: none;
         }
         .active {
             display: block;
+        }
+        p, li {
+            line-height: 1.6;
         }
     </style>
 </head>
@@ -52,27 +65,40 @@
             <h2>Objetivo</h2>
             <p>Atuar como Analista de Suporte em TI, Analista de Sistemas, Analista Field Service...</p>
             <h2>Resumo Profissional</h2>
-            <p>Profissional com 8 anos de experiência em Tecnologia da Informação...</p>
+            <p>Profissional com 8 anos de experiência em Tecnologia da Informação, especializado em suporte técnico...</p>
             <h2>Experiência Profissional</h2>
-            <p><strong>Trade Serviços (mar/2022 - Atual)</strong></p>
-            <p>- Atendimento de chamados e suporte técnico avançado...</p>
+            <ul>
+                <li><strong>Trade Serviços (mar/2022 - Atual)</strong> - Atendimento de chamados, suporte técnico...</li>
+                <li><strong>Sicoob Credinor (jan/2022 - mar/2022)</strong> - Suporte a usuários, manutenção de hardware...</li>
+                <li><strong>Spread Teleinformática (mar/2019 - fev/2022)</strong> - Administração de infraestrutura...</li>
+            </ul>
             <h2>Formação Acadêmica</h2>
             <p>Bacharelado em Sistemas de Informação — FACOMP (2013)</p>
+            <p>Mestrado em Modelagem Computacional (disciplinas isoladas) — UNIMONTES (Cursando)</p>
         </div>
         
         <div id="english" class="content">
             <h2>Objective</h2>
             <p>Work as an IT Support Analyst, Systems Analyst, Field Service Analyst...</p>
             <h2>Professional Summary</h2>
-            <p>Professional with 8 years of experience in Information Technology...</p>
+            <p>Professional with 8 years of experience in Information Technology, specialized in technical support...</p>
             <h2>Professional Experience</h2>
-            <p><strong>Trade Services (Mar/2022 - Present)</strong></p>
-            <p>- Handling service requests and advanced technical support...</p>
+            <ul>
+                <li><strong>Trade Services (Mar/2022 - Present)</strong> - Handling service requests, advanced support...</li>
+                <li><strong>Sicoob Credinor (Jan/2022 - Mar/2022)</strong> - User support, hardware maintenance...</li>
+                <li><strong>Spread Teleinformatics (Mar/2019 - Feb/2022)</strong> - Infrastructure administration...</li>
+            </ul>
             <h2>Education</h2>
             <p>Bachelor’s Degree in Information Systems — FACOMP (2013)</p>
+            <p>Master’s in Computational Modeling (individual courses) — UNIMONTES (Ongoing)</p>
         </div>
     </div>
 
     <script>
         function showContent(language) {
-            do
+            document.querySelectorAll('.content').forEach(div => div.classList.remove('active'));
+            document.getElementById(language).classList.add('active');
+        }
+    </script>
+</body>
+</html>
