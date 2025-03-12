@@ -4,8 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Currículo - Alisson Henrique de Souza</title>
-  <!-- Exemplo de uso de Google Fonts (opcional). 
-       Você também pode comentar ou remover se desejar um arquivo único. -->
+  <!-- Fonte opcional do Google Fonts -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link 
     href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" 
@@ -26,7 +25,7 @@
       color: #333;
       line-height: 1.6;
     }
-    
+
     header {
       background: #333;
       color: #fff;
@@ -53,6 +52,7 @@
       text-decoration: none;
       font-weight: 600;
       transition: color 0.3s ease;
+      cursor: pointer;
     }
     nav a:hover {
       color: #ffdf00;
@@ -94,6 +94,14 @@
       margin-bottom: 0.3rem;
     }
 
+    /* Artigos: por padrão, PT fica visível, EN oculto */
+    #pt {
+      display: block;
+    }
+    #en {
+      display: none;
+    }
+
     /* Responsividade */
     @media (max-width: 600px) {
       main {
@@ -105,25 +113,25 @@
 </head>
 
 <body>
-  <!-- Cabeçalho com nome e resumo rápido -->
+  <!-- Cabeçalho -->
   <header>
     <h1>Alisson Henrique de Souza</h1>
     <p>Analista de Sistemas | Analista de Suporte | Analista Field Service | Suporte de TI</p>
   </header>
 
-  <!-- Menu para alternar entre PT e EN -->
+  <!-- Menu de troca de idiomas -->
   <nav>
-    <a href="#pt">Português</a>
-    <a href="#en">English</a>
+    <a id="btn-pt">Português</a>
+    <a id="btn-en">English</a>
   </nav>
 
   <main>
-    <!-- Versão em Português -->
+    <!-- Currículo em Português -->
     <article id="pt">
       <h2>Currículo - Português</h2>
       <section>
         <p>
-          <strong>Idade:</strong> 34 anos<br/>
+          <strong>Idade:</strong> 33 anos<br/>
           <strong>Local:</strong> Belvedere II, Montes Claros/MG<br/>
           <strong>Telefones:</strong> (38) 9 9816-5829 | (38) 3224-6808<br/>
           <strong>E-mail:</strong> <a href="mailto:alissonhenr90@hotmail.com">alissonhenr90@hotmail.com</a><br/>
@@ -144,7 +152,8 @@
         <p>
           Profissional com <strong>8 anos de experiência</strong> em suporte técnico e análise de sistemas, 
           tendo atuado em grandes empresas como <strong>Petrobras Biocombustível</strong>, <strong>Banco do Nordeste</strong>, 
-          <strong>Stefanini</strong>, <strong>Hitss do Brasil</strong>, <strong>Spread</strong>, <strong>Sicoob Credinor</strong> e <strong>Trade Serviços</strong>.
+          <strong>Stefanini</strong>, <strong>Hitss do Brasil</strong>, <strong>Spread</strong>, 
+          <strong>Sicoob Credinor</strong> e <strong>Trade Serviços</strong>.
         </p>
         <ul>
           <li>Vivência sólida em ambientes Windows (todas as versões), manutenção de hardware e software, gerenciamento de Active Directory e redes.</li>
@@ -196,7 +205,7 @@
         <h3>HITSS do Brasil Serviços Tecnológicos (Fev/2018 - Fev/2019)</h3>
         <p><em>Prestação de serviço para Petrobras Biocombustível – Analista Field Service</em></p>
         <ul>
-          <li>Suporte local e remoto a usuários (configuração de sistemas, manutenção de hardware).</li>
+          <li>Suporte local e remoto a usuários, configurações de sistemas e manutenção de hardware.</li>
           <li>Administração de contas em Active Directory e controle de acessos.</li>
           <li>Acompanhamento de demandas de segurança da informação.</li>
           <li>Colaboração em projetos de renovação tecnológica e implantação de melhorias.</li>
@@ -262,7 +271,7 @@
       </section>
     </article>
 
-    <!-- Versão em Inglês -->
+    <!-- Currículo em Inglês -->
     <article id="en">
       <h2>Curriculum Vitae - English</h2>
       <section>
@@ -291,8 +300,8 @@
         <p>
           IT professional with <strong>8 years of experience</strong> in technical support and systems analysis, 
           having worked at major companies such as <strong>Petrobras Biocombustível</strong>, <strong>Banco do Nordeste</strong>, 
-          <strong>Stefanini</strong>, <strong>Hitss do Brasil</strong>, <strong>Spread</strong>, <strong>Sicoob Credinor</strong>, 
-          and <strong>Trade Serviços</strong>.
+          <strong>Stefanini</strong>, <strong>Hitss do Brasil</strong>, <strong>Spread</strong>, 
+          <strong>Sicoob Credinor</strong>, and <strong>Trade Serviços</strong>.
         </p>
         <ul>
           <li>Solid background in Windows environments (all versions), hardware/software maintenance, Active Directory management, and networks.</li>
@@ -413,5 +422,23 @@
       </section>
     </article>
   </main>
+
+  <!-- JavaScript para alternar conteúdo -->
+  <script>
+    const btnPT = document.getElementById('btn-pt');
+    const btnEN = document.getElementById('btn-en');
+    const secPT = document.getElementById('pt');
+    const secEN = document.getElementById('en');
+
+    btnPT.addEventListener('click', () => {
+      secPT.style.display = 'block';
+      secEN.style.display = 'none';
+    });
+
+    btnEN.addEventListener('click', () => {
+      secPT.style.display = 'none';
+      secEN.style.display = 'block';
+    });
+  </script>
 </body>
 </html>
