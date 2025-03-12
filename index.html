@@ -2,161 +2,444 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Currículo - Alisson Henrique de Souza</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <!-- Fonte opcional do Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" 
+    rel="stylesheet"
+  />
+  
   <style>
+    /* Reset básico */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Open Sans', sans-serif;
     }
 
     body {
-      background: #f0f2f5;
+      background: #f5f5f5;
       color: #333;
       line-height: 1.6;
     }
 
-    .container {
-      max-width: 900px;
-      margin: 3rem auto;
-      background: #fff;
-      padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
-
     header {
+      background: #333;
+      color: #fff;
+      padding: 1rem;
       text-align: center;
-      padding-bottom: 1rem;
-      border-bottom: 2px solid #ddd;
     }
-
     header h1 {
       font-weight: 600;
-      font-size: 1.8rem;
-      color: #333;
+      margin-bottom: 0.5rem;
+    }
+    header p {
+      font-weight: 300;
+      font-size: 0.9rem;
     }
 
-    header p {
-      font-weight: 400;
-      font-size: 1rem;
-      color: #777;
+    nav {
+      background: #444;
+      padding: 0.5rem;
+      text-align: center;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+      cursor: pointer;
+    }
+    nav a:hover {
+      color: #ffdf00;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 0.25rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      margin-bottom: 1rem;
+      color: #333;
+      font-size: 1.4rem;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 0.5rem;
+    }
+
+    section {
+      margin-bottom: 1.5rem;
     }
 
     .section-title {
-      font-size: 1.3rem;
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
       font-weight: 600;
       color: #444;
-      margin-top: 1.5rem;
-      padding-bottom: 0.5rem;
-      border-bottom: 2px solid #ddd;
-    }
-
-    p, ul {
-      margin-top: 0.5rem;
     }
 
     ul {
-      padding-left: 1rem;
+      list-style-position: inside;
+      margin-left: 1rem;
     }
-
     li {
       margin-bottom: 0.3rem;
     }
 
-    a {
-      color: #007bff;
-      text-decoration: none;
+    /* Artigos: por padrão, PT fica visível, EN oculto */
+    #pt {
+      display: block;
+    }
+    #en {
+      display: none;
     }
 
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .contact {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-      margin-top: 1rem;
-    }
-
-    .contact span {
-      font-weight: 600;
-    }
-
+    /* Responsividade */
     @media (max-width: 600px) {
-      .container {
-        padding: 1.5rem;
+      main {
+        padding: 1rem;
         margin: 1rem;
       }
     }
   </style>
 </head>
+
 <body>
-  <div class="container">
-    <header>
-      <h1>Alisson Henrique de Souza</h1>
-      <p>Analista de Sistemas | Analista de Suporte | Analista Field Service | Suporte de TI</p>
-    </header>
+  <!-- Cabeçalho -->
+  <header>
+    <h1>Alisson Henrique de Souza</h1>
+    <p>Analista de Sistemas | Analista de Suporte | Analista Field Service | Suporte de TI</p>
+  </header>
 
-    <div class="section-title">Informações Pessoais</div>
-    <div class="contact">
-      <p><span>Local:</span> Belvedere II, Montes Claros/MG</p>
-      <p><span>Telefones:</span> (38) 9 9816-5829 | (38) 3224-6808</p>
-      <p><span>Email:</span> <a href="mailto:alissonhenr90@hotmail.com">alissonhenr90@hotmail.com</a></p>
-      <p><span>LinkedIn:</span> <a href="https://linkedin.com/in/alissonheriquesza" target="_blank">linkedin.com/in/alissonheriquesza</a></p>
-    </div>
+  <!-- Menu de troca de idiomas -->
+  <nav>
+    <a id="btn-pt">Português</a>
+    <a id="btn-en">English</a>
+  </nav>
 
-    <div class="section-title">Objetivo</div>
-    <p>Atuar como Analista de Suporte, Analista de Sistemas, Analista Field Service ou Suporte de TI.</p>
+  <main>
+    <!-- Currículo em Português -->
+    <article id="pt">
+      <h2>Currículo - Português</h2>
+      <section>
+        <p>
+          <strong>Idade:</strong> 33 anos<br/>
+          <strong>Local:</strong> Belvedere II, Montes Claros/MG<br/>
+          <strong>Telefones:</strong> (38) 9 9816-5829 | (38) 3224-6808<br/>
+          <strong>E-mail:</strong> <a href="mailto:alissonhenr90@hotmail.com">alissonhenr90@hotmail.com</a><br/>
+          <strong>LinkedIn:</strong> 
+          <a href="https://linkedin.com/in/alissonheriquesza" target="_blank">
+            linkedin.com/in/alissonheriquesza
+          </a>
+        </p>
+      </section>
 
-    <div class="section-title">Resumo Profissional</div>
-    <p>Profissional com 8 anos de experiência em suporte técnico e análise de sistemas...</p>
-    <ul>
-      <li>Vivência sólida em ambientes Windows...</li>
-      <li>Experiência com ferramentas de ITSM...</li>
-    </ul>
+      <section>
+        <div class="section-title">Objetivo</div>
+        <p>Atuar como Analista de Suporte, Analista de Sistemas, Analista Field Service ou Suporte de TI.</p>
+      </section>
 
-    <div class="section-title">Formação Acadêmica</div>
-    <ul>
-      <li><strong>Bacharel em Sistemas de Informação</strong> – FACOMP, 2013.</li>
-      <li><strong>Técnico em Administração</strong> – SENAI Montes Claros, 2023-2025.</li>
-    </ul>
+      <section>
+        <div class="section-title">Resumo Profissional</div>
+        <p>
+          Profissional com <strong>8 anos de experiência</strong> em suporte técnico e análise de sistemas, 
+          tendo atuado em grandes empresas como <strong>Petrobras Biocombustível</strong>, <strong>Banco do Nordeste</strong>, 
+          <strong>Stefanini</strong>, <strong>Hitss do Brasil</strong>, <strong>Spread</strong>, 
+          <strong>Sicoob Credinor</strong> e <strong>Trade Serviços</strong>.
+        </p>
+        <ul>
+          <li>Vivência sólida em ambientes Windows (todas as versões), manutenção de hardware e software, gerenciamento de Active Directory e redes.</li>
+          <li>Experiência com ferramentas de <strong>ITSM</strong> e plataformas de controle de chamados (ServiceNow, BRS Remedy, Click).</li>
+          <li>Focado em solução de problemas, implantação de melhorias, elaboração de pareceres técnicos e suporte a infraestrutura de TI.</li>
+          <li>Perfil versátil, proativo e colaborativo, habituado a lidar com diferentes demandas e equipes multidisciplinares.</li>
+        </ul>
+      </section>
 
-    <div class="section-title">Experiência Profissional</div>
-    <h3>Trade Serviços (Mar/2022 - Atual)</h3>
-    <p><em>Analista de Suporte em TI</em></p>
-    <ul>
-      <li>Atendimento e resolução de chamados (ServiceNow).</li>
-      <li>Gestão de ativos de TI e controle de inventário.</li>
-    </ul>
+      <section>
+        <div class="section-title">Formação Acadêmica</div>
+        <ul>
+          <li><strong>Bacharel em Sistemas de Informação</strong> – Faculdade de Computação de Montes Claros (FACOMP), 2013.</li>
+          <li><strong>Técnico em Administração</strong> – Senai -  Montes Claros - 2023-2025.</li>
+          <li><strong>Disciplinas isoladas do Mestrado em Modelagem Computacional (UNIMONTES)</strong>: Computação Natural e Introdução à Aprendizagem de Máquina.</li>
+        </ul>
+      </section>
 
-    <h3>Sicoob Credinor (Jan/2022 - Mar/2022)</h3>
-    <p><em>Analista de Suporte</em></p>
-    <ul>
-      <li>Suporte de primeiro e segundo nível a usuários internos.</li>
-    </ul>
+      <section>
+        <div class="section-title">Experiência Profissional</div>
 
-    <div class="section-title">Idiomas</div>
-    <ul>
-      <li><strong>Inglês</strong> – Nível Intermediário (cursando).</li>
-    </ul>
+        <h3>Trade Serviços (Mar/2022 - Atual)</h3>
+        <p><em>Prestação de serviço para Petrobras Biocombustível – Analista de Suporte em TI</em></p>
+        <ul>
+          <li>Atendimento e resolução de chamados (ServiceNow).</li>
+          <li>Gestão de ativos de TI e controle de inventário.</li>
+          <li>Emissão de pareceres técnicos e elaboração de projetos de infraestrutura.</li>
+          <li>Administração e manutenção de redes e servidores.</li>
+          <li>Ponto focal para demandas de TIC na usina, garantindo disponibilidade e satisfação dos usuários.</li>
+        </ul>
 
-    <div class="section-title">Certificações</div>
-    <ul>
-      <li>CPA-10 – Emitida em abril de 2023.</li>
-      <li>ITIL, COBIT, PMBOK – Udemy.</li>
-    </ul>
+        <h3>Sicoob Credinor (Jan/2022 - Mar/2022)</h3>
+        <p><em>Analista de Suporte</em></p>
+        <ul>
+          <li>Suporte de primeiro e segundo nível a usuários internos.</li>
+          <li>Instalação, manutenção e configuração de hardware e software.</li>
+          <li>Apoio na implementação de processos e boas práticas de ITSM.</li>
+        </ul>
 
-    <div class="section-title">Competências</div>
-    <ul>
-      <li>Windows, Linux básico, ITSM, Active Directory.</li>
-      <li>Redes, cabeamento estruturado, protocolos de rede.</li>
-    </ul>
-  </div>
+        <h3>Spread Teleinformática (Mar/2019 - Fev/2022)</h3>
+        <p><em>Prestação de serviço para Petrobras Biocombustível – Analista de Suporte em TIC</em></p>
+        <ul>
+          <li>Atendimento de chamados e suporte técnico (Click, BRS Remedy System).</li>
+          <li>Gestão de inventário de equipamentos e software.</li>
+          <li>Participação na elaboração de projetos de TI e pareceres técnicos.</li>
+          <li>Coordenação de infraestrutura local e pontos de rede.</li>
+          <li>Ponto focal em demandas relacionadas à TIC, garantindo qualidade do serviço.</li>
+        </ul>
+
+        <h3>HITSS do Brasil Serviços Tecnológicos (Fev/2018 - Fev/2019)</h3>
+        <p><em>Prestação de serviço para Petrobras Biocombustível – Analista Field Service</em></p>
+        <ul>
+          <li>Suporte local e remoto a usuários, configurações de sistemas e manutenção de hardware.</li>
+          <li>Administração de contas em Active Directory e controle de acessos.</li>
+          <li>Acompanhamento de demandas de segurança da informação.</li>
+          <li>Colaboração em projetos de renovação tecnológica e implantação de melhorias.</li>
+        </ul>
+
+        <h3>Stefanini (Abr/2016 - Fev/2018)</h3>
+        <p><em>Prestação de serviço para Petrobras Biocombustível – Analista de Suporte N1</em></p>
+        <ul>
+          <li>Atendimento de incidentes e requisições via BRS Remedy System.</li>
+          <li>Configuração e suporte em Windows, pacote Office e aplicações internas.</li>
+          <li>Suporte a projetos de infraestrutura, cabeamento e rede local.</li>
+          <li>Emissão de relatórios de performance para melhoria contínua.</li>
+        </ul>
+
+        <h3>Banco do Nordeste (Abr/2011 - Jul/2013)</h3>
+        <p><em>Estagiário em TI</em></p>
+        <ul>
+          <li>Suporte a usuários internos, montagem e manutenção de computadores.</li>
+          <li>Instalação de softwares, execução de backups e monitoramento de servidores.</li>
+          <li>Apoio em processos de automação bancária e sistemas de GED.</li>
+          <li>Participação em análises prévias de crédito e suporte às áreas de negócio.</li>
+        </ul>
+      </section>
+
+      <section>
+        <div class="section-title">Idiomas</div>
+        <ul>
+          <li><strong>Inglês</strong> – Nível Intermediário (cursando).</li>
+        </ul>
+      </section>
+
+      <section>
+        <div class="section-title">Certificações e Formação Complementar</div>
+        <ul>
+          <li>Técnico em Administração (SENAI Montes Claros) – Cursando.</li>
+          <li>Certificação CPA-10 – Emitida em abril de 2023.</li>
+          <li>Classificação e Tratamento da Informação (SIRH/EAD Petrobras).</li>
+          <li>Proteção e Permissão de Acesso em Arquivos Classificados (SIRH/EAD Petrobras).</li>
+          <li>IT Governance Management: Governança de TI (ITIL, COBIT, PRINCE2, PMBOK, DevOps, ISO/IEC 27001 – Udemy).</li>
+          <li>Segurança da Informação (SIRH/EAD Petrobras).</li>
+          <li>Proteção de Dados: Conceitos, Riscos e Impactos (SIRH/EAD Petrobras).</li>
+          <li>Ética na Cibersegurança (LinkedIn Learning).</li>
+          <li>Gestão Estratégica de TI – ITIL (Fundação Bradesco).</li>
+          <li>Autorregulação Bancária (Banco do Nordeste).</li>
+          <li>Controles Internos (Banco do Nordeste).</li>
+          <li>Power BI: Básico (Udemy).</li>
+          <li>Windows 10 for IT Support: Troubleshooting Basics (LinkedIn Learning).</li>
+          <li>Boas Práticas de Instalação (Furukawa).</li>
+          <li>Normas Regulamentadoras: NR-06, NR-20, NR-32.</li>
+        </ul>
+      </section>
+
+      <section>
+        <div class="section-title">Competências Técnicas e Comportamentais</div>
+        <ul>
+          <li><strong>Sistemas Operacionais:</strong> Windows (todas as versões), noções de Linux.</li>
+          <li><strong>Ferramentas de Service Desk/ITSM:</strong> ServiceNow, BRS Remedy, Click.</li>
+          <li><strong>Infraestrutura e Redes:</strong> Configuração de LAN/WAN, cabeamento estruturado, protocolos de rede, gestão de ativos.</li>
+          <li><strong>Serviços de Diretório:</strong> Active Directory (criação e controle de usuários, permissões, GPO).</li>
+          <li><strong>Metodologias e Boas Práticas:</strong> ITIL, COBIT, PMBOK, DevOps, ISO/IEC 27001.</li>
+          <li><strong>Soft Skills:</strong> Proatividade, trabalho em equipe, comunicação clara, foco em resultados, organização, resolução de problemas.</li>
+        </ul>
+      </section>
+    </article>
+
+    <!-- Currículo em Inglês -->
+    <article id="en">
+      <h2>Curriculum Vitae - English</h2>
+      <section>
+        <p>
+          <strong>Age:</strong> 33<br/>
+          <strong>Location:</strong> Belvedere II, Montes Claros/MG - Brazil<br/>
+          <strong>Phone:</strong> +55 (38) 9 9816-5829 | +55 (38) 3224-6808<br/>
+          <strong>Email:</strong> <a href="mailto:alissonhenr90@hotmail.com">alissonhenr90@hotmail.com</a><br/>
+          <strong>LinkedIn:</strong> 
+          <a href="https://linkedin.com/in/alissonheriquesza" target="_blank">
+            linkedin.com/in/alissonheriquesza
+          </a>
+        </p>
+      </section>
+
+      <section>
+        <div class="section-title">Objective</div>
+        <p>
+          Seeking to work as an <strong>IT Support Analyst</strong>, <strong>Systems Analyst</strong>, 
+          <strong>Field Service Analyst</strong>, or <strong>IT Support</strong> professional.
+        </p>
+      </section>
+
+      <section>
+        <div class="section-title">Professional Summary</div>
+        <p>
+          IT professional with <strong>8 years of experience</strong> in technical support and systems analysis, 
+          having worked at major companies such as <strong>Petrobras Biocombustível</strong>, <strong>Banco do Nordeste</strong>, 
+          <strong>Stefanini</strong>, <strong>Hitss do Brasil</strong>, <strong>Spread</strong>, 
+          <strong>Sicoob Credinor</strong>, and <strong>Trade Serviços</strong>.
+        </p>
+        <ul>
+          <li>Solid background in Windows environments (all versions), hardware/software maintenance, Active Directory management, and networks.</li>
+          <li>Experience with <strong>ITSM</strong> tools and ticketing platforms (ServiceNow, BRS Remedy, Click).</li>
+          <li>Focused on problem-solving, process improvement, preparing technical reports, and supporting IT infrastructure.</li>
+          <li>Versatile, proactive, and collaborative, accustomed to dealing with various demands and multidisciplinary teams.</li>
+        </ul>
+      </section>
+
+      <section>
+        <div class="section-title">Academic Background</div>
+        <ul>
+          <li><strong>Bachelor’s Degree in Information Systems</strong> – Faculdade de Computação de Montes Claros (FACOMP), 2013.</li>
+          <li>
+            <strong>Selected graduate courses in Computational Modeling (UNIMONTES)</strong>: 
+            Natural Computing and Introduction to Machine Learning.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <div class="section-title">Professional Experience</div>
+
+        <h3>Trade Serviços (Mar/2022 - Present)</h3>
+        <p><em>Outsourced Service for Petrobras Biocombustível – IT Support Analyst</em></p>
+        <ul>
+          <li>Provide technical support and incident resolution (ServiceNow).</li>
+          <li>Manage IT assets and inventory control.</li>
+          <li>Issue technical opinions for procurement and project proposals.</li>
+          <li>Administration and maintenance of networks and servers.</li>
+          <li>Main focal point for IT demands, ensuring service availability and user satisfaction.</li>
+        </ul>
+
+        <h3>Sicoob Credinor (Jan/2022 - Mar/2022)</h3>
+        <p><em>Support Analyst</em></p>
+        <ul>
+          <li>First- and second-level IT support for internal users.</li>
+          <li>Installation, maintenance, and configuration of hardware and software.</li>
+          <li>Assistance in implementing ITSM processes and best practices.</li>
+        </ul>
+
+        <h3>Spread Teleinformática (Mar/2019 - Feb/2022)</h3>
+        <p><em>Outsourced Service for Petrobras Biocombustível – ICT Support Analyst</em></p>
+        <ul>
+          <li>Handled support tickets and technical assistance (Click, BRS Remedy System).</li>
+          <li>Managed inventory of equipment and software.</li>
+          <li>Participated in IT projects and technical assessments.</li>
+          <li>Coordinated local infrastructure and network points.</li>
+          <li>Main liaison for various IT demands, ensuring quality service.</li>
+        </ul>
+
+        <h3>HITSS do Brasil Serviços Tecnológicos (Feb/2018 - Feb/2019)</h3>
+        <p><em>Outsourced Service for Petrobras Biocombustível – Field Service Analyst</em></p>
+        <ul>
+          <li>On-site and remote support for users, system configuration, and hardware maintenance.</li>
+          <li>Managed user accounts in Active Directory and controlled access policies.</li>
+          <li>Monitored information security and internal policies.</li>
+          <li>Contributed to technology renewal projects and IT improvements.</li>
+        </ul>
+
+        <h3>Stefanini (Apr/2016 - Feb/2018)</h3>
+        <p><em>Outsourced Service for Petrobras Biocombustível – Level 1 Support Analyst</em></p>
+        <ul>
+          <li>Handled incidents and service requests via BRS Remedy System.</li>
+          <li>Configured and supported Windows OS, Microsoft Office, and internal applications.</li>
+          <li>Provided infrastructure support, including cabling and local networks.</li>
+          <li>Generated performance reports and contributed to continuous improvement.</li>
+        </ul>
+
+        <h3>Banco do Nordeste (Apr/2011 - Jul/2013)</h3>
+        <p><em>IT Intern</em></p>
+        <ul>
+          <li>Supported internal users, assembled and maintained computers.</li>
+          <li>Installed software, performed backups, and monitored servers.</li>
+          <li>Provided assistance in banking automation processes and GED systems.</li>
+          <li>Participated in preliminary credit analysis and supported business areas.</li>
+        </ul>
+      </section>
+
+      <section>
+        <div class="section-title">Languages</div>
+        <ul>
+          <li><strong>English</strong> – Intermediate level (in progress).</li>
+        </ul>
+      </section>
+
+      <section>
+        <div class="section-title">Certifications & Additional Training</div>
+        <ul>
+          <li>Technical Course in Administration (SENAI Montes Claros) – In progress.</li>
+          <li>CPA-10 Certification – Issued in April 2023.</li>
+          <li>Information Classification and Management (SIRH/EAD Petrobras).</li>
+          <li>File Protection and Permissions for Classified Documents (SIRH/EAD Petrobras).</li>
+          <li>IT Governance Management (ITIL, COBIT, PRINCE2, PMBOK, DevOps, ISO/IEC 27001 – Udemy).</li>
+          <li>Information Security (SIRH/EAD Petrobras).</li>
+          <li>Data Protection: Concepts, Risks, and Impacts (SIRH/EAD Petrobras).</li>
+          <li>Cybersecurity Ethics (LinkedIn Learning).</li>
+          <li>Strategic IT Management – ITIL (Fundação Bradesco).</li>
+          <li>Banking Self-Regulation (Banco do Nordeste).</li>
+          <li>Internal Controls (Banco do Nordeste).</li>
+          <li>Basic Power BI (Udemy).</li>
+          <li>Windows 10 for IT Support: Troubleshooting Basics (LinkedIn Learning).</li>
+          <li>Installation Best Practices (Furukawa).</li>
+          <li>Regulatory Standards: NR-06, NR-20, NR-32.</li>
+        </ul>
+      </section>
+
+      <section>
+        <div class="section-title">Technical & Soft Skills</div>
+        <ul>
+          <li><strong>Operating Systems:</strong> Windows (all versions), basic Linux knowledge.</li>
+          <li><strong>Service Desk/ITSM Tools:</strong> ServiceNow, BRS Remedy, Click.</li>
+          <li><strong>Infrastructure & Networks:</strong> LAN/WAN, structured cabling, network protocols, IT asset management.</li>
+          <li><strong>Directory Services:</strong> Active Directory (user creation, permissions, GPO).</li>
+          <li><strong>Methodologies & Best Practices:</strong> ITIL, COBIT, PMBOK, DevOps, ISO/IEC 27001.</li>
+          <li><strong>Soft Skills:</strong> Proactivity, teamwork, clear communication, results orientation, organization, problem-solving.</li>
+        </ul>
+      </section>
+    </article>
+  </main>
+
+  <!-- JavaScript para alternar conteúdo -->
+  <script>
+    const btnPT = document.getElementById('btn-pt');
+    const btnEN = document.getElementById('btn-en');
+    const secPT = document.getElementById('pt');
+    const secEN = document.getElementById('en');
+
+    btnPT.addEventListener('click', () => {
+      secPT.style.display = 'block';
+      secEN.style.display = 'none';
+    });
+
+    btnEN.addEventListener('click', () => {
+      secPT.style.display = 'none';
+      secEN.style.display = 'block';
+    });
+  </script>
 </body>
 </html>
