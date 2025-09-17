@@ -1,188 +1,563 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Currículo - Alisson Henrique de Souza</title>
 
-  <!-- Fonte Google -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+  <!-- Fonte -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { 
-      font-family: 'Inter', sans-serif; 
-      background: #f4f6f8; 
-      color: #333; 
-      line-height: 1.6; 
+    /* Reset e base */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html,body { height: 100%; }
+    body {
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(180deg, #f6f8fa 0%, #eef2f5 100%);
+      color: #233;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      line-height: 1.5;
+      padding-bottom: 3rem;
     }
 
+    /* Cabeçalho */
     header {
-      background: linear-gradient(135deg, #2c3e50, #34495e);
+      background: linear-gradient(135deg,#0f1724,#1e293b);
       color: #fff;
       padding: 2rem 1rem;
       text-align: center;
     }
-    header h1 { font-weight: 700; margin-bottom: 0.5rem; }
-    header p { font-weight: 300; font-size: 1rem; }
+    header h1 { font-size: 1.6rem; font-weight: 700; letter-spacing: -0.5px; }
+    header p { margin-top: .5rem; font-weight: 300; opacity: 0.95; }
 
+    /* Nav / Toggle idioma */
     nav {
-      background: #fff;
-      text-align: center;
-      padding: 1rem;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      position: sticky;
-      top: 0;
-      z-index: 100;
+      display:flex;
+      justify-content: center;
+      gap: .5rem;
+      margin-top: -1.2rem;
+      padding: .6rem;
     }
     .lang-toggle {
       display: inline-flex;
-      border: 1px solid #ccc;
-      border-radius: 25px;
+      border-radius: 999px;
       overflow: hidden;
+      box-shadow: 0 6px 18px rgba(15,23,42,0.08);
+      background: #fff;
     }
     .lang-toggle button {
-      background: #fff;
-      border: none;
-      padding: 0.5rem 1.2rem;
+      border: 0;
+      background: transparent;
+      padding: .6rem 1rem;
       cursor: pointer;
       font-weight: 600;
-      transition: all 0.3s;
+      transition: background .18s, color .18s, transform .08s;
     }
+    .lang-toggle button:hover { transform: translateY(-1px); }
     .lang-toggle button.active {
-      background: #2c3e50;
+      background: linear-gradient(90deg,#0f1724,#334155);
       color: #fff;
     }
-    .lang-toggle button:hover:not(.active) {
-      background: #eee;
-    }
 
-    main {
-      max-width: 950px;
-      margin: 2rem auto;
-      background: #fff;
-      padding: 2rem;
-      border-radius: 0.5rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    /* Ações secundárias */
+    .actions {
+      display:flex;
+      gap:.5rem;
+      justify-content:center;
+      margin: .6rem 0 0;
     }
-
-    h2 {
-      margin-bottom: 1rem;
-      font-size: 1.5rem;
-      border-bottom: 2px solid #eee;
-      padding-bottom: 0.5rem;
-    }
-    section { margin-bottom: 2rem; }
-    .section-title {
-      font-size: 1.2rem;
+    .btn {
+      background: #0f1724;
+      color: #fff;
+      padding: .5rem .9rem;
+      border-radius: 8px;
+      text-decoration: none;
       font-weight: 600;
-      margin-bottom: 0.6rem;
-      color: #2c3e50;
+      border: 0;
+      cursor: pointer;
+      box-shadow: 0 6px 12px rgba(15,23,42,0.08);
+    }
+    .btn.ghost {
+      background: transparent;
+      color: #0f1724;
+      border: 1px solid rgba(15,23,42,0.08);
     }
 
-    ul { list-style-position: inside; margin-left: 0.5rem; }
-    li { margin-bottom: 0.5rem; }
+    /* Conteúdo principal */
+    main {
+      max-width: 980px;
+      margin: 1.5rem auto;
+      padding: 1.6rem;
+    }
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(2,6,23,0.06);
+      padding: 1.6rem;
+      overflow: hidden;
+    }
 
-    a { color: #2c3e50; text-decoration: none; }
-    a:hover { text-decoration: underline; }
+    /* Head info row */
+    .head-row {
+      display:flex;
+      gap: 1.2rem;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+    .avatar {
+      width: 96px;
+      height: 96px;
+      border-radius: 12px;
+      background: linear-gradient(135deg,#64748b,#0f1724);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#fff;
+      font-weight:700;
+      font-size:1.1rem;
+      flex: 0 0 96px;
+    }
+    .person-info {
+      flex: 1 1 300px;
+    }
+    .person-info h2 { font-size: 1.25rem; margin-bottom:.2rem; }
+    .person-info p.subtitle { color: #475569; font-weight: 500; opacity: .95; }
+
+    /* Sections */
+    h3.section-title {
+      font-size: 1.05rem;
+      margin: 1rem 0 .6rem;
+      color: #0f1724;
+      border-bottom: 1px dashed #e6eef6;
+      padding-bottom: .4rem;
+    }
+    p, ul { font-size: .96rem; color: #1f2937; }
+    ul { margin-left: 1rem; margin-top: .6rem; }
+    li { margin-bottom: .45rem; }
+
+    /* Small meta list */
+    .meta { display:flex; flex-wrap:wrap; gap: .8rem; margin-top: .6rem; color:#334155; }
+    .meta .pill {
+      background: #f1f5f9;
+      padding: .35rem .6rem;
+      border-radius: 999px;
+      font-weight:600;
+      font-size:.85rem;
+    }
+
+    /* Experience item */
+    .exp {
+      margin-bottom: .8rem;
+      padding: .6rem;
+      border-radius: 8px;
+      background: #fbfdff;
+      border: 1px solid #f1f9ff;
+    }
+    .exp h4 { font-size: .98rem; margin-bottom:.2rem; }
+    .exp .period { font-size: .85rem; color:#475569; margin-bottom:.4rem; }
 
     /* Responsividade */
-    @media (max-width: 768px) {
-      main { padding: 1.5rem; margin: 1rem; }
-      header h1 { font-size: 1.5rem; }
-      header p { font-size: 0.9rem; }
+    @media (max-width:720px) {
+      .head-row { align-items:flex-start; }
+      .avatar { width:76px; height:76px; font-size:1rem; }
+      .person-info h2 { font-size:1.05rem; }
+    }
+
+    /* Impressão */
+    @media print {
+      nav, .actions { display:none !important; }
+      body { background: #fff; }
+      .card { box-shadow:none; border-radius:0; }
     }
   </style>
 </head>
-
 <body>
   <header>
-    <h1>Alisson Henrique de Souza</h1>
-    <p id="subtitle"></p>
+    <h1 id="page-title">Alisson Henrique de Souza</h1>
+    <p id="page-subtitle">Analista de Sistemas | Analista de Suporte | Analista Field Service | Suporte de TI</p>
   </header>
 
   <nav>
-    <div class="lang-toggle">
-      <button id="btn-pt" class="active">Português</button>
-      <button id="btn-en">English</button>
+    <div class="lang-toggle" role="tablist" aria-label="Idioma">
+      <button id="btn-pt" class="active" role="tab" aria-selected="true">Português</button>
+      <button id="btn-en" role="tab" aria-selected="false">English</button>
     </div>
   </nav>
 
-  <main id="cv-content">
-    <!-- Conteúdo dinâmico gerado por JavaScript -->
+  <div class="actions">
+    <button class="btn" id="printBtn" title="Salvar/Imprimir (salvar como PDF)">Salvar / PDF</button>
+    <button class="btn ghost" id="copyBtn" title="Copiar currículo (HTML) para área de transferência">Copiar HTML</button>
+  </div>
+
+  <main>
+    <div class="card" id="cvCard" role="article" aria-live="polite">
+      <!-- Conteúdo dinâmico -->
+    </div>
   </main>
 
   <script>
+    /* Dados (preencha/edite aqui) */
     const data = {
       pt: {
         subtitle: "Analista de Sistemas | Analista de Suporte | Analista Field Service | Suporte de TI",
-        title: "Currículo - Português",
-        personal: `
+        personalHTML: `
           <strong>Idade:</strong> 34 anos<br/>
           <strong>Local:</strong> Belvedere II, Montes Claros/MG<br/>
           <strong>Telefones:</strong> (38) 9 9816-5829 | (38) 3224-6808<br/>
           <strong>E-mail:</strong> <a href="mailto:alissonhenr90@hotmail.com">alissonhenr90@hotmail.com</a><br/>
-          <strong>LinkedIn:</strong> 
-          <a href="https://linkedin.com/in/alissonheriquesza" target="_blank">linkedin.com/in/alissonheriquesza</a>
+          <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/alissonheriquesza" target="_blank" rel="noopener">linkedin.com/in/alissonheriquesza</a>
         `,
         objective: "Atuar como Analista de Suporte, Analista de Sistemas, Analista Field Service ou Suporte de TI.",
         summary: `
-          Profissional com <strong>8 anos de experiência</strong> em suporte técnico e análise de sistemas, 
-          tendo atuado em grandes empresas como <strong>Petrobras Biocombustível</strong>, 
-          <strong>Banco do Nordeste</strong>, <strong>Stefanini</strong>, <strong>Hitss do Brasil</strong>, 
-          <strong>Spread</strong>, <strong>Sicoob Credinor</strong> e <strong>Trade Serviços</strong>.
+          Profissional com <strong>8 anos de experiência</strong> em suporte técnico e análise de sistemas, com atuação em empresas como 
+          <strong>Petrobras Biocombustível</strong>, <strong>Banco do Nordeste</strong>, <strong>Stefanini</strong>, 
+          <strong>Hitss do Brasil</strong>, <strong>Spread</strong>, <strong>Sicoob Credinor</strong> e <strong>Trade Serviços</strong>.
+          Foco em resolução de problemas, melhoria contínua, documentação técnica e automação de tarefas rotineiras.
         `,
+        academic: [
+          "Bacharel em Sistemas de Informação — Faculdade de Computação de Montes Claros (FACOMP), 2013.",
+          "Técnico em Administração — SENAI (cursando).",
+          "Disciplinas isoladas do Mestrado em Modelagem Computacional (UNIMONTES): Computação Natural e Introdução à Aprendizagem de Máquina."
+        ],
+        experience: [
+          {
+            company: "Trade Serviços",
+            period: "Mar/2022 - Atual",
+            role: "Prestação de serviço para Petrobras Biocombustível – Analista de Suporte em TI",
+            bullets: [
+              "Atendimento e resolução de chamados via ServiceNow.",
+              "Gestão de ativos de TI e controle de inventário.",
+              "Emissão de pareceres técnicos e elaboração de projetos de infraestrutura.",
+              "Administração e manutenção de redes e servidores.",
+              "Ponto focal para demandas de TIC na usina, garantindo disponibilidade e satisfação dos usuários."
+            ]
+          },
+          {
+            company: "Sicoob Credinor",
+            period: "Jan/2022 - Mar/2022",
+            role: "Analista de Suporte",
+            bullets: [
+              "Suporte de primeiro e segundo nível a usuários internos.",
+              "Instalação, manutenção e configuração de hardware e software.",
+              "Apoio na implementação de processos e boas práticas de ITSM."
+            ]
+          },
+          {
+            company: "Spread Teleinformática",
+            period: "Mar/2019 - Fev/2022",
+            role: "Prestação de serviço para Petrobras Biocombustível – Analista de Suporte em TIC",
+            bullets: [
+              "Atendimento de chamados e suporte técnico (Click, BRS Remedy System).",
+              "Gestão de inventário de equipamentos e software.",
+              "Participação na elaboração de projetos de TI e pareceres técnicos.",
+              "Coordenação de infraestrutura local e pontos de rede.",
+              "Ponto focal em demandas relacionadas à TIC, garantindo qualidade do serviço."
+            ]
+          },
+          {
+            company: "HITSS do Brasil Serviços Tecnológicos",
+            period: "Fev/2018 - Fev/2019",
+            role: "Prestação de serviço para Petrobras Biocombustível – Analista Field Service",
+            bullets: [
+              "Suporte local e remoto a usuários, configurações de sistemas e manutenção de hardware.",
+              "Administração de contas em Active Directory e controle de acessos.",
+              "Acompanhamento de demandas de segurança da informação.",
+              "Colaboração em projetos de renovação tecnológica e implantação de melhorias."
+            ]
+          },
+          {
+            company: "Stefanini",
+            period: "Abr/2016 - Fev/2018",
+            role: "Prestação de serviço para Petrobras Biocombustível – Analista de Suporte N1",
+            bullets: [
+              "Atendimento de incidentes e requisições via BRS Remedy System.",
+              "Configuração e suporte em Windows, pacote Office e aplicações internas.",
+              "Suporte a projetos de infraestrutura, cabeamento e rede local.",
+              "Emissão de relatórios de performance para melhoria contínua."
+            ]
+          },
+          {
+            company: "Banco do Nordeste",
+            period: "Abr/2011 - Jul/2013",
+            role: "Estagiário em TI",
+            bullets: [
+              "Suporte a usuários internos, montagem e manutenção de computadores.",
+              "Instalação de softwares, execução de backups e monitoramento de servidores.",
+              "Apoio em processos de automação bancária e sistemas de GED.",
+              "Participação em análises prévias de crédito e suporte às áreas de negócio."
+            ]
+          }
+        ],
+        languages: ["Inglês – Nível Intermediário (cursando)."],
+        certifications: [
+          "Técnico em Administração (SENAI Montes Claros) – Cursando.",
+          "Certificação CPA-10 – Emitida em abril de 2023.",
+          "Classificação e Tratamento da Informação (SIRH/EAD Petrobras).",
+          "Proteção e Permissão de Acesso em Arquivos Classificados (SIRH/EAD Petrobras).",
+          "IT Governance Management: ITIL, COBIT, PRINCE2, PMBOK, DevOps, ISO/IEC 27001 – Udemy.",
+          "Segurança da Informação (SIRH/EAD Petrobras).",
+          "Proteção de Dados: Conceitos, Riscos e Impactos (SIRH/EAD Petrobras).",
+          "Ética na Cibersegurança (LinkedIn Learning).",
+          "Power BI: Básico (Udemy).",
+          "Windows 10 for IT Support: Troubleshooting Basics (LinkedIn Learning).",
+          "Boas Práticas de Instalação (Furukawa).",
+          "Normas Regulamentadoras: NR-06, NR-20, NR-32."
+        ],
+        skills: [
+          "Sistemas Operacionais: Windows (todas as versões), noções de Linux.",
+          "Ferramentas de Service Desk/ITSM: ServiceNow, BRS Remedy, Click.",
+          "Infraestrutura e Redes: LAN/WAN, cabeamento estruturado, protocolos de rede, gestão de ativos.",
+          "Serviços de Diretório: Active Directory (criação e controle de usuários, permissões, GPO).",
+          "Metodologias e Boas Práticas: ITIL, COBIT, PMBOK, DevOps, ISO/IEC 27001.",
+          "Soft Skills: Proatividade, trabalho em equipe, comunicação clara, foco em resultados, organização, resolução de problemas."
+        ]
       },
+
       en: {
         subtitle: "Systems Analyst | IT Support Analyst | Field Service Analyst | IT Specialist",
-        title: "Curriculum Vitae - English",
-        personal: `
+        personalHTML: `
           <strong>Age:</strong> 34<br/>
           <strong>Location:</strong> Belvedere II, Montes Claros/MG - Brazil<br/>
           <strong>Phone:</strong> +55 (38) 9 9816-5829 | +55 (38) 3224-6808<br/>
           <strong>Email:</strong> <a href="mailto:alissonhenr90@hotmail.com">alissonhenr90@hotmail.com</a><br/>
-          <strong>LinkedIn:</strong> 
-          <a href="https://linkedin.com/in/alissonheriquesza" target="_blank">linkedin.com/in/alissonheriquesza</a>
+          <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/alissonheriquesza" target="_blank" rel="noopener">linkedin.com/in/alissonheriquesza</a>
         `,
-        objective: "Seeking to work as an IT Support Analyst, Systems Analyst, or Field Service Analyst.",
+        objective: "Seeking to work as an IT Support Analyst, Systems Analyst, Field Service Analyst or IT Support professional.",
         summary: `
-          IT professional with <strong>8 years of experience</strong> in technical support and systems analysis, 
-          having worked at major companies such as <strong>Petrobras Biocombustível</strong>, 
-          <strong>Banco do Nordeste</strong>, <strong>Stefanini</strong>, <strong>Hitss do Brasil</strong>, 
-          <strong>Spread</strong>, <strong>Sicoob Credinor</strong>, and <strong>Trade Serviços</strong>.
+          IT professional with <strong>8 years of experience</strong> in technical support and systems analysis, having worked at companies such as
+          <strong>Petrobras Biocombustível</strong>, <strong>Banco do Nordeste</strong>, <strong>Stefanini</strong>, <strong>Hitss do Brasil</strong>,
+          <strong>Spread</strong>, <strong>Sicoob Credinor</strong> and <strong>Trade Serviços</strong>. Focused on problem solving, process improvement and automation.
         `,
+        academic: [
+          "Bachelor’s Degree in Information Systems — Faculdade de Computação de Montes Claros (FACOMP), 2013.",
+          "Technical Course in Administration — SENAI (in progress).",
+          "Selected graduate courses in Computational Modeling (UNIMONTES): Natural Computing and Introduction to Machine Learning."
+        ],
+        experience: [
+          {
+            company: "Trade Serviços",
+            period: "Mar/2022 - Present",
+            role: "Outsourced Service for Petrobras Biocombustível – IT Support Analyst",
+            bullets: [
+              "Provide technical support and incident resolution via ServiceNow.",
+              "Manage IT assets and inventory control.",
+              "Issue technical opinions for procurement and project proposals.",
+              "Administration and maintenance of networks and servers.",
+              "Main focal point for IT demands, ensuring service availability and user satisfaction."
+            ]
+          },
+          {
+            company: "Sicoob Credinor",
+            period: "Jan/2022 - Mar/2022",
+            role: "Support Analyst",
+            bullets: [
+              "First- and second-level IT support for internal users.",
+              "Installation, maintenance, and configuration of hardware and software.",
+              "Assistance in implementing ITSM processes and best practices."
+            ]
+          },
+          {
+            company: "Spread Teleinformática",
+            period: "Mar/2019 - Feb/2022",
+            role: "Outsourced Service for Petrobras Biocombustível – ICT Support Analyst",
+            bullets: [
+              "Handled support tickets and technical assistance (Click, BRS Remedy System).",
+              "Managed inventory of equipment and software.",
+              "Participated in IT projects and technical assessments.",
+              "Coordinated local infrastructure and network points.",
+              "Main liaison for various IT demands, ensuring quality service."
+            ]
+          },
+          {
+            company: "HITSS do Brasil Serviços Tecnológicos",
+            period: "Feb/2018 - Feb/2019",
+            role: "Outsourced Service for Petrobras Biocombustível – Field Service Analyst",
+            bullets: [
+              "On-site and remote support for users, system configuration, and hardware maintenance.",
+              "Managed user accounts in Active Directory and controlled access policies.",
+              "Monitored information security and internal policies.",
+              "Contributed to technology renewal projects and IT improvements."
+            ]
+          },
+          {
+            company: "Stefanini",
+            period: "Apr/2016 - Feb/2018",
+            role: "Outsourced Service for Petrobras Biocombustível – Level 1 Support Analyst",
+            bullets: [
+              "Handled incidents and service requests via BRS Remedy System.",
+              "Configured and supported Windows OS, Microsoft Office, and internal applications.",
+              "Provided infrastructure support, including cabling and local networks.",
+              "Generated performance reports and contributed to continuous improvement."
+            ]
+          },
+          {
+            company: "Banco do Nordeste",
+            period: "Apr/2011 - Jul/2013",
+            role: "IT Intern",
+            bullets: [
+              "Supported internal users, assembled and maintained computers.",
+              "Installed software, performed backups, and monitored servers.",
+              "Assisted in banking automation processes and GED systems.",
+              "Participated in preliminary credit analysis and supported business areas."
+            ]
+          }
+        ],
+        languages: ["English – Intermediate level (in progress)."],
+        certifications: [
+          "Technical Course in Administration (SENAI Montes Claros) – In progress.",
+          "CPA-10 Certification – Issued in April 2023.",
+          "Information Classification and Management (SIRH/EAD Petrobras).",
+          "File Protection and Permissions for Classified Documents (SIRH/EAD Petrobras).",
+          "IT Governance Management: ITIL, COBIT, PRINCE2, PMBOK, DevOps, ISO/IEC 27001 – Udemy.",
+          "Information Security (SIRH/EAD Petrobras).",
+          "Data Protection: Concepts, Risks, and Impacts (SIRH/EAD Petrobras).",
+          "Cybersecurity Ethics (LinkedIn Learning).",
+          "Basic Power BI (Udemy).",
+          "Windows 10 for IT Support: Troubleshooting Basics (LinkedIn Learning).",
+          "Installation Best Practices (Furukawa).",
+          "Regulatory Standards: NR-06, NR-20, NR-32."
+        ],
+        skills: [
+          "Operating Systems: Windows (all versions), basic Linux knowledge.",
+          "Service Desk/ITSM Tools: ServiceNow, BRS Remedy, Click.",
+          "Infrastructure & Networks: LAN/WAN, structured cabling, network protocols, IT asset management.",
+          "Directory Services: Active Directory (user creation, permissions, GPO).",
+          "Methodologies & Best Practices: ITIL, COBIT, PMBOK, DevOps, ISO/IEC 27001.",
+          "Soft Skills: Proactivity, teamwork, clear communication, results orientation, organization, problem-solving."
+        ]
       }
     };
 
-    const subtitleEl = document.getElementById("subtitle");
-    const contentEl = document.getElementById("cv-content");
-    const btnPT = document.getElementById("btn-pt");
-    const btnEN = document.getElementById("btn-en");
+    /* Seleção de idioma (persistência) */
+    const storedLang = localStorage.getItem('cv_lang') || 'pt';
+    const btnPT = document.getElementById('btn-pt');
+    const btnEN = document.getElementById('btn-en');
+    const cvCard = document.getElementById('cvCard');
+    const pageTitle = document.getElementById('page-title');
+    const pageSubtitle = document.getElementById('page-subtitle');
 
-    function render(lang) {
-      subtitleEl.innerHTML = data[lang].subtitle;
-      contentEl.innerHTML = `
-        <h2>${data[lang].title}</h2>
-        <section><div class="section-title">${lang === "pt" ? "Dados Pessoais" : "Personal Information"}</div><p>${data[lang].personal}</p></section>
-        <section><div class="section-title">${lang === "pt" ? "Objetivo" : "Objective"}</div><p>${data[lang].objective}</p></section>
-        <section><div class="section-title">${lang === "pt" ? "Resumo Profissional" : "Professional Summary"}</div><p>${data[lang].summary}</p></section>
-      `;
+    function setActiveButton(lang) {
+      if (lang === 'pt') {
+        btnPT.classList.add('active');
+        btnEN.classList.remove('active');
+        btnPT.setAttribute('aria-selected', 'true');
+        btnEN.setAttribute('aria-selected', 'false');
+      } else {
+        btnEN.classList.add('active');
+        btnPT.classList.remove('active');
+        btnEN.setAttribute('aria-selected', 'true');
+        btnPT.setAttribute('aria-selected', 'false');
+      }
     }
 
-    btnPT.addEventListener("click", () => {
-      btnPT.classList.add("active");
-      btnEN.classList.remove("active");
-      render("pt");
+    function renderCV(lang) {
+      const d = data[lang];
+      pageSubtitle.textContent = d.subtitle;
+      // Construir HTML do currículo completo
+      let html = '';
+
+      html += `
+        <div class="head-row">
+          <div class="avatar">AH</div>
+          <div class="person-info">
+            <h2>${lang === 'pt' ? 'Alisson Henrique de Souza' : 'Alisson Henrique de Souza'}</h2>
+            <p class="subtitle">${d.subtitle}</p>
+            <div class="meta" style="margin-top:.6rem;">
+              <div class="pill">${lang === 'pt' ? 'Analista de Sistemas' : 'Systems Analyst'}</div>
+              <div class="pill">${lang === 'pt' ? 'Suporte de TI' : 'IT Support'}</div>
+              <div class="pill">${lang === 'pt' ? 'Montes Claros, MG' : 'Montes Claros, MG, Brazil'}</div>
+            </div>
+          </div>
+        </div>
+      `;
+
+      html += `<h3 class="section-title">${lang === 'pt' ? 'Dados Pessoais' : 'Personal Information'}</h3>`;
+      html += `<p>${d.personalHTML}</p>`;
+
+      html += `<h3 class="section-title">${lang === 'pt' ? 'Objetivo' : 'Objective'}</h3>`;
+      html += `<p>${d.objective}</p>`;
+
+      html += `<h3 class="section-title">${lang === 'pt' ? 'Resumo Profissional' : 'Professional Summary'}</h3>`;
+      html += `<p>${d.summary}</p>`;
+
+      html += `<h3 class="section-title">${lang === 'pt' ? 'Experiência Profissional' : 'Professional Experience'}</h3>`;
+      d.experience.forEach(exp => {
+        html += `<div class="exp">`;
+        html += `<h4>${exp.company} — ${exp.role}</h4>`;
+        html += `<div class="period">${exp.period}</div>`;
+        html += `<ul>`;
+        exp.bullets.forEach(b => html += `<li>${b}</li>`);
+        html += `</ul>`;
+        html += `</div>`;
+      });
+
+      html += `<h3 class="section-title">${lang === 'pt' ? 'Formação Acadêmica' : 'Academic Background'}</h3>`;
+      html += `<ul>`;
+      d.academic.forEach(a => html += `<li>${a}</li>`);
+      html += `</ul>`;
+
+      html += `<h3 class="section-title">${lang === 'pt' ? 'Idiomas' : 'Languages'}</h3>`;
+      html += `<ul>`;
+      d.languages.forEach(l => html += `<li>${l}</li>`);
+      html += `</ul>`;
+
+      html += `<h3 class="section-title">${lang === 'pt' ? 'Certificações e Formação Complementar' : 'Certifications & Additional Training'}</h3>`;
+      html += `<ul>`;
+      d.certifications.forEach(c => html += `<li>${c}</li>`);
+      html += `</ul>`;
+
+      html += `<h3 class="section-title">${lang === 'pt' ? 'Competências Técnicas e Comportamentais' : 'Technical & Soft Skills'}</h3>`;
+      html += `<ul>`;
+      d.skills.forEach(s => html += `<li>${s}</li>`);
+      html += `</ul>`;
+
+      cvCard.innerHTML = html;
+
+      // Atualiza título da página (para impressão/SEO)
+      document.title = (lang === 'pt' ? 'Currículo - ' : 'Curriculum - ') + 'Alisson Henrique';
+    }
+
+    // Eventos dos botões
+    btnPT.addEventListener('click', () => {
+      setActiveButton('pt');
+      renderCV('pt');
+      localStorage.setItem('cv_lang','pt');
     });
 
-    btnEN.addEventListener("click", () => {
-      btnEN.classList.add("active");
-      btnPT.classList.remove("active");
-      render("en");
+    btnEN.addEventListener('click', () => {
+      setActiveButton('en');
+      renderCV('en');
+      localStorage.setItem('cv_lang','en');
     });
 
-    // Render inicial
-    render("pt");
+    // Inicializa com idioma armazenado ou pt
+    setActiveButton(storedLang);
+    renderCV(storedLang);
+
+    // Botão salvar/print
+    document.getElementById('printBtn').addEventListener('click', () => {
+      window.print();
+    });
+
+    // Copiar HTML do currículo para clipboard (útil para colar no Word/Editor)
+    document.getElementById('copyBtn').addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(cvCard.innerHTML);
+        const prev = document.getElementById('copyBtn').textContent;
+        document.getElementById('copyBtn').textContent = 'Copiado!';
+        setTimeout(()=> document.getElementById('copyBtn').textContent = prev, 1500);
+      } catch (e) {
+        alert('Não foi possível copiar automaticamente. Você pode selecionar o conteúdo e copiar manualmente.');
+      }
+    });
+
+    /* Observação:
+       - Para exportar DOCX/PDF programaticamente com formatação avançada você pode integrar bibliotecas como:
+         docx.js (para .docx) ou html2pdf / jsPDF + html2canvas (para PDF).
+       - Se quiser, eu já implemento a exportação DOCX/PDF (com download direto) — diga se prefere DOCX ou PDF. */
   </script>
 </body>
 </html>
